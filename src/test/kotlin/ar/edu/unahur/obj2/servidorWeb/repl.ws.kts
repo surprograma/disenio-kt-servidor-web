@@ -1,4 +1,4 @@
-import ar.edu.unahur.obj2.ejemplo.Calculadora
+import ar.edu.unahur.obj2.servidorWeb.Calculadora
 
 // Pueden usar este archivo para hacer pruebas rápidas,
 // de la misma forma en que usaban el REPL de Wollok.
