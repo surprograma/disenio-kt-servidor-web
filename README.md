@@ -1,5 +1,9 @@
 # Simulador de servidor web
 
+Este ejercicio está pensado para ser resuelto utilizando la técnica TDD. El código que se incluye fue programado de esa manera, puede verse el [video con el paso a paso en YouTube](https://youtu.be/tgJnN4f04ug).
+
+Se pide completar todos los requerimientos que faltan, **siguiendo la misma metodología**. Para que quede claro: no alcanza con que el código funcione y haga lo que tiene que hacer, además pedimos que se resuelva haciendo TDD. Como es imposible verificar si lo hicieron así o no, en la corrección haremos mucho especial hincapié en los tests.
+
 ## Funcionamiento básico
 
 Se nos pide modelar la estructura de un servidor web que atiende **pedidos**. Cada pedido indica:
@@ -39,7 +43,7 @@ Si no hay ningún módulo que pueda atender el pedido, hay que devolver código 
 
 A un servidor también se le tienen que poder agregar analizadores, que son objetos que registran y/o analizan distintos aspectos del tráfico. Puede no haber ningún analizador, uno o muchos. Se tienen que poder agregar y quitar dinámicamente.
 
-Ante cada pedido que atiende, el servidor le envia _a todos_ los analizadores que tenga asignados en ese momento la respuesta y el módulo que la generó.
+Ante cada pedido que atiende, el servidor le envía _a todos_ los analizadores que tenga asignados en ese momento la respuesta y el módulo que la generó.
 
 Implementar los siguientes analizadores:
 
