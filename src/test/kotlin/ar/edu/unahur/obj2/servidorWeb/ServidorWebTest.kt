@@ -10,6 +10,9 @@ class ServidorWebTest : DescribeSpec({
     servidor.agregarModulo(
       Modulo(listOf("txt"), "todo bien", 100)
     )
+    servidor.agregarModulo(
+      Modulo(listOf("jpg", "gif"), "qué linda foto", 100)
+    )
 
     it("devuelve 501 si recibe un pedido que no es HTTP") {
       val respuesta = servidor.realizarPedido("207.46.13.5", "https://pepito.com.ar/hola.txt", LocalDateTime.now())
