@@ -18,7 +18,7 @@ La respuesta a un pedido consiste de:
 * un _body_ o contenido que será un `String`;
 * una referencia al pedido que la generó.
 
-Los servidores que modelemos van a aceptar solamente el protocolo HTTP. Si el protocolo de la URL es distinto a "http" hay que devolver código de respuesta 501 (servicio no implementado) y body vacío.
+Los servidores que modelemos van a aceptar solamente el protocolo HTTP. Si el protocolo de la URL es distinto a "http" hay que devolver código de respuesta 501 (servicio no implementado). Para este y los errores que se definen más adelante vamos a devolver body vacío y tiempo de respuesta 10 milisegundos.
 
 ## Módulos
 
@@ -31,9 +31,9 @@ De cada módulo se debe configurar:
 * qué devuelve (un texto fijo),
 * cuánto tarda (un número, también fijo).
 
-Cuando se recibe un pedido, se le pregunta a todos los módulos que tiene configurados si lo pueden atender o no. El servidor deriva el pedido al primer módulo que le dice que sí. El módulo genera la respuesta con el body y tiempo de respuesta, y la devuelve. El servidor le agrega a esa respuesta el código de respuesta 200 (OK) y el dato del pedido que la generó.
+Cuando se recibe un pedido, se le pregunta a todos los módulos que tiene configurados si lo pueden atender o no. El servidor deriva el pedido al primer módulo que le dice que sí. La respuesta debe contener el body y el tiempo de respuesta definido por el módulo, el código de respuesta 200 (OK) y el dato del pedido que la generó.
 
-Si no hay ningún módulo que pueda atender el pedido, hay que devolver código de respuesta 404 (Not found) y body vacío.
+Si no hay ningún módulo que pueda atender el pedido, hay que devolver código de respuesta 404 (Not found) y lo explicado más arriba sobre los errores.
 
 ## Analizadores
 
