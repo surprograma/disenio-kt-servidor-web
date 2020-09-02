@@ -4,6 +4,8 @@ Este ejercicio está pensado para ser resuelto utilizando la técnica TDD. El c�
 
 Se pide completar todos los requerimientos que faltan, **siguiendo la misma metodología**. Para que quede claro: no alcanza con que el código funcione y haga lo que tiene que hacer, además pedimos que se resuelva haciendo TDD. Como es imposible verificar si lo hicieron así o no, en la corrección haremos mucho especial hincapié en los tests.
 
+![Esquema](./assets/servidor-secuencia.png)
+
 ## Funcionamiento básico
 
 Se nos pide modelar la estructura de un servidor web que atiende **pedidos**. Cada pedido indica:
@@ -35,7 +37,7 @@ De cada módulo se debe configurar:
 * qué devuelve (un texto fijo),
 * cuánto tarda (un número, también fijo).
 
-Cuando se recibe un pedido, se le pregunta a todos los módulos que tiene configurados si lo pueden atender o no. El servidor deriva el pedido al primer módulo que le dice que sí. La respuesta debe contener el body y el tiempo de respuesta definido por el módulo, el código de respuesta 200 (OK) y el dato del pedido que la generó.
+Cuando se recibe un pedido, se le pregunta a todos los módulos que tiene configurados si lo pueden atender o no. El servidor deriva el pedido al primer módulo que le dice que sí. La respuesta debe contener el body y el tiempo de respuesta definido por el módulo, el código de respuesta 200 (OK) y el pedido que la generó.
 
 Si no hay ningún módulo que pueda atender el pedido, hay que devolver código de respuesta 404 (Not found) y lo explicado más arriba sobre los errores.
 
