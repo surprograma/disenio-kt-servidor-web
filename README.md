@@ -68,3 +68,7 @@ Ayuda: las consultas que se piden tienen que ser métodos del analizador, no del
 A este se le tiene que poder preguntar: tiempo de respuesta promedio, cantidad de pedidos entre dos momentos (fecha/hora) que fueron atendidos, cantidad de respuestas cuyo body incluye un determinado `String` (p.ej. cuántas respuestas dicen "hola", lo que incluye "hola amigos" y "ayer me dijeron hola 4 veces"), porcentaje de pedidos con respuesta exitosa.
 
 Los objetos `LocalDateTime` tienen dos métodos que pueden resultar útiles: `fecha.isBefore(otraFecha)` y `fecha.isAfter(otraFecha)`, que indican si la otra fecha está antes o después, respectivamente.
+
+## Créditos
+
+Enunciado original creado por Carlos Lombardi para UNQ - locación General Belgrano. Transformado a Markdown, recortado y reformateado por Federico Aloi para UNaHur.
