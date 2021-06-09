@@ -90,7 +90,7 @@ Se pide implementar la solución a este problema en Kotlin, junto con los tests 
 1. Incorporar los analizadores. Ayuda: las consultas que se piden tienen que ser métodos del analizador correspondiente, no del servidor. 
 ## Licencia
   
-**Esta obra fue elaborada por [Federico Aloi](https://github.com/faloi) y publicada bajo una [Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional][cc-by-sa].**
+Esta obra fue elaborada por [Federico Aloi](https://github.com/faloi) y publicada bajo una [Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional][cc-by-sa].
 
 [![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
 
@@ -99,6 +99,6 @@ Se pide implementar la solución a este problema en Kotlin, junto con los tests 
 
 ### Créditos
 
-:memo: [Enunciado original](https://web-ciu-programacion.github.io/site/material/documentos/ejercicios/webserver.pdf) creado por Carlos Lombardi.
+:memo: [Enunciado original](https://web-ciu-programacion.github.io/site/material/documentos/ejercicios/webserver.pdf) creado por [Carlos Lombardi](https://github.com/clombardi).
 
 :camera_flash: Imagen de portada por <a href="https://unsplash.com/@wocintechchat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christina @ wocintechchat.com</a> en <a href="https://unsplash.com/s/photos/web-server?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>.
