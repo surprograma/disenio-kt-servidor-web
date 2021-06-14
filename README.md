@@ -88,6 +88,7 @@ Se pide implementar la solución a este problema en Kotlin, junto con los tests 
 1. Implementar el servidor _sin módulos_, haciendo que devuelva 200 si el protocolo es el correcto, y 501 si no lo es.
 1. Incorporar los módulos.
 1. Incorporar los analizadores. Ayuda: las consultas que se piden tienen que ser métodos del analizador correspondiente, no del servidor. 
+
 ## Licencia
   
 Esta obra fue elaborada por [Federico Aloi](https://github.com/faloi) y publicada bajo una [Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional][cc-by-sa].
