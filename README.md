@@ -52,7 +52,7 @@ Cuando se recibe un pedido, ocurre lo siguiente:
 
 ### Analizadores
 
-A un servidor también se le tienen que poder agregar analizadores, que son objetos que registran y/o analizan distintos aspectos del tráfico. Puede no haber ningún analizador, uno o muchos. Se tienen que poder agregar y quitar dinámicamente.
+A un servidor también se le tienen que poder agregar analizadores, que se encargan de registrar y/o analizan distintos aspectos del tráfico. Puede no haber ningún analizador, uno o muchos. Se tienen que poder agregar y quitar dinámicamente.
 
 Ante cada pedido que atiende, el servidor le envía _a todos_ los analizadores que tenga asignados en ese momento la respuesta y el módulo que la generó.
 
