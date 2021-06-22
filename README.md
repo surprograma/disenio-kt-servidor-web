@@ -54,7 +54,7 @@ Cuando se recibe un pedido, ocurre lo siguiente:
 
 A un servidor también se le tienen que poder agregar analizadores, que se encargan de registrar y/o analizan distintos aspectos del tráfico. Puede no haber ningún analizador, uno o muchos. Se tienen que poder agregar y quitar dinámicamente.
 
-Ante cada pedido que atiende, el servidor le envía _a todos_ los analizadores que tenga asignados en ese momento la respuesta y el módulo que la generó.
+Ante cada pedido que atiende, el servidor le envía _a todos_ los analizadores que tenga asignados en ese momento la respuesta y el módulo que la generó (si hubo uno). **Pista 🧐:** en el caso de que ningún modulo haya llegado a responder al pedido, se puede registrar un módulo nulo en su lugar (o bien `null`, o bien un objeto que represente al "no-modulo").
 
 A partir del análisis de esas respuestas, a cada analizador se le pueden hacer ciertas consultas. El trabajo del servidor es simplemente reenviarle las respuestas, luego cada analizado decidirá qué hacer con ella.
 
