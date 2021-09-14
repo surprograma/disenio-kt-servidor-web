@@ -56,21 +56,36 @@ A un servidor también se le tienen que poder agregar analizadores, que se encar
 
 Ante cada pedido que atiende, el servidor le envía _a todos_ los analizadores que tenga asignados en ese momento la respuesta y el módulo que la generó (si hubo uno). **Pista 🧐:** en el caso de que ningún modulo haya llegado a responder al pedido, se puede registrar un módulo nulo en su lugar (o bien `null`, o bien un objeto que represente al "no-modulo").
 
-A partir del análisis de esas respuestas, a cada analizador se le pueden hacer ciertas consultas. El trabajo del servidor es simplemente reenviarle las respuestas, luego cada analizado decidirá qué hacer con ella.
+A partir del análisis de esas respuestas, a cada analizador se le pueden hacer ciertas consultas. El trabajo del servidor es simplemente reenviarle las respuestas, luego cada analizador decidirá qué hacer con ellas.
 
-#### Detección de demora en respuesta
+#### Monitor con detección de demora en respuesta
 
-Se le configura una **demora mínima** en milisegundos. Una respuesta cuyo tiempo de respuesta supere la demora mínima se considera demorada. 
+Se le configura una **demora máxima** en milisegundos. Una respuesta cuyo tiempo de respuesta supere la demora máxima se considera demorada.
 
-Se le tiene que poder preguntar, para un módulo, la cantidad de respuestas demoradas.
+Lo que hace el monitor es _imprimir por pantalla_ todas las respuestas que recibe, señalizando aquellas que considera demoradas según el criterio configurado. El formato en el que se imprimen las respuestas es el siguiente (omitiendo los corchetes):
 
-#### IPs sospechosas
+```xml
+<IP origen> [<Fecha pedido formato ISO8601>] GET <URL del pedido> <Codigo de respuesta> <Tiempo demora>
+```
 
-Se configura una colección de IPs sospechosas, y debe ir registrando todos los pedidos que estas IPs realizaron. A partir de eso, se debe poder consultar:
+Para aquellas respuestas demoradas, se antepone al formato anterior la palabra `DEMORADA`. A modo de ejemplo, el siguiente sería el log de un monitor configurado con demora máxima de 750 milisegundos:
 
-* cuántos pedidos realizó una cierta IP sospechosa,
-* cuál fue el módulo más consultado por todas las IPs sospechosas,
-* el conjunto de IPs sospechosas que requirieron una cierta ruta.
+```
+DEMORADA - 2.2.2.2 [2021-09-13T16:14:25.487-03:00] GET http://surprograma.com/ideas.pdf 200 1100
+2.2.2.2 [2021-09-13T16:15:03.334-03:00] GET http://surprograma.com/libro/clase-1.md 200 700
+DEMORADA - 2.2.2.2 [2021-09-13T17:03:25.487-03:00] GET http://surprograma.com/libro/clase2.md 404 800
+2.2.2.2 [2021-09-13T17:56:57.279-03:00] GET http://surprograma.com/libro/clase-2.md 200 550
+```
+
+#### Alerta de IPs sospechosas
+
+Se configura una colección de **IPs sospechosas** y una **dirección de correo electrónico** de contacto. Cada vez que el analizador reciba un pedido de una IP sospechosa, debe enviar un correo electrónico a la dirección configurada, con la siguiente información:
+
+- Cuántos pedidos realizó la IP sospechosa en cuestión.
+- Cuál fue el módulo más consultado por todas las IPs sospechosas.
+- El conjunto de IPs sospechosas que requirieron la misma ruta que este pedido.
+
+Como aún no está definido el proveedor que se utilizará para enviar correos, solo simularemos el envío. Crear para ello algún objeto o clase que implemente la interfaz `ClienteMail`.
 
 #### Estadísticas
 
