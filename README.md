@@ -85,7 +85,9 @@ Se configura una colección de **IPs sospechosas** y una **dirección de correo 
 - Cuál fue el módulo más consultado por todas las IPs sospechosas.
 - El conjunto de IPs sospechosas que requirieron la misma ruta que este pedido.
 
-Como aún no está definido el proveedor que se utilizará para enviar correos, solo simularemos el envío. Crear para ello algún objeto o clase que implemente la interfaz `ClienteMail`.
+Para el envío de mails incluimos una interfaz `ClienteMail`, que puede ser implementada de cualquier forma para hacer pruebas. El código de este analizador debería hacer uso de esa interfaz y no de una implementación concreta.
+
+:space_invader: Adicionalmente, se incluye una clase `DiscordMail` que sirve para enviar mensajes a un canal de Discord. Si estás haciendo este ejercicio como parte de un curso, pedile a tu docente que te comparta las credenciales del servidor.
 
 #### Estadísticas
 
