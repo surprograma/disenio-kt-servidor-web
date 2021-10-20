@@ -1,4 +1,4 @@
-package ar.edu.unahur.obj2.servidorWeb.mail
+package ar.edu.unahur.obj2.servidorWeb.integraciones
 
 /*
 👀 ¡¡ATENCIÓN!!
