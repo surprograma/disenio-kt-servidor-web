@@ -1,6 +1,7 @@
-package ar.edu.unahur.obj2.servidorWeb.mail
+package ar.edu.unahur.obj2.servidorWeb.integraciones
 
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -22,7 +23,8 @@ class DiscordMail(private val nombreGrupo: String, webhookId: String, webhookTok
   private val JSON = "application/json; charset=utf-8".toMediaType()
   private val urlBase = "https://discord.com/api/webhooks/$webhookId/$webhookToken"
   private val client = OkHttpClient()
-  private val jsonAdapter = Moshi.Builder().build().adapter(DiscordMessage::class.java)
+  private val jsonAdapter =
+    Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build().adapter(DiscordMessage::class.java)
 
   override fun enviar(destinatario: String, asunto: String, cuerpo: String) {
     val request = crearRequest(destinatario, asunto, cuerpo)
