@@ -62,7 +62,7 @@ A partir del análisis de esas respuestas, a cada analizador se le pueden hacer 
 
 Se le configura una **demora máxima** en milisegundos. Una respuesta cuyo tiempo de respuesta supere la demora máxima se considera demorada.
 
-Lo que hace el monitor es _imprimir por pantalla_ todas las respuestas que recibe, señalizando aquellas que considera demoradas según el criterio configurado. El formato en el que se imprimen las respuestas es el siguiente (omitiendo los corchetes):
+Lo que hace el monitor es _imprimir por pantalla_ todas las respuestas que recibe, señalizando aquellas que considera demoradas según el criterio configurado. El formato en el que se imprimen las respuestas es el siguiente (omitiendo los corchetes angulares, `<` y `>`):
 
 ```xml
 <IP origen> [<Fecha pedido formato ISO8601>] GET <URL del pedido> <Codigo de respuesta> <Tiempo demora>
